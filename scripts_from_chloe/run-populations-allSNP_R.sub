@@ -1,0 +1,33 @@
+# run-populations-singleSNP.sub
+universe = vanilla
+
+job = run-populations-allSNP_R
+
+#send email notification of job status
+#notify_user = cdrummond@wisc.edu
+#notification = Always
+
+requirements = (Target.HasGluster == true)
+
+#define variables
+run_name = testing_Mn_Rubus
+cpus = 4
+
+arguments = $(Process) $(run_name) $(cpus)
+
+should_transfer_files = YES
+transfer_input_files = ../../stacks-2.0-build.tar.gz, popmap
+when_to_transfer_output = ON_EXIT
+
+executable = run-populations-allSNP_R
+
+output = logfiles_populations/$(job)_$(Cluster)_$(Process).out
+error = logfiles_populations/$(job)_$(Cluster)_$(Process).err
+log = $(job)_$(Cluster).log
+
+request_cpus = $(cpus)
+request_memory = 24GB
+request_disk = 30
+
+###############
+queue 15

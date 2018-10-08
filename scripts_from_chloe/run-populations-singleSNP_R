@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#run populations-singleSNP_R
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+
+#move popmap to correct place
+mv popmap ./tmp/
+
+#get output from previous step
+cp /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/stacks.tar.gz ./tmp
+cd ./tmp
+tar -xzvf stacks.tar.gz
+rm stacks.tar.gz
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run populations
+./populations -P ../tmp/stacks -M ../tmp/popmap -t $CPUS -p 11 -r 0.75 --lnl_lim -50 --vcf --write_single_snp  
+
+
+#tar up final output from full stacks pipeline, done, ready to use
+cd ../tmp
+tar -czvf stacks.tar.gz stacks/
+
+cp stacks.tar.gz /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/

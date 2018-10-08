@@ -1,0 +1,34 @@
+# 0_run-processradtags.sub
+universe = vanilla
+
+job = 0_run-processradtags
+
+#send email notification of job status
+notify_user = adinicola@wisc.edu
+notification = Always
+
+requirements = (Target.HasGluster == true)
+
+#define variables
+run_name = P-breweri_2018-05-24
+cpus = 16
+input_data = Potentilla_2018-04-10_longreads.tar.gz
+barcodes = P_breweri_2018-04-10_samplenames.txt
+
+arguments = $(Process) $(run_name) $(cpus) $(input_data) $(barcodes)
+
+should_transfer_files = YES
+transfer_input_files = ../stacks_install/stacks-2.0-build.tar.gz
+when_to_transfer_output = ON_EXIT
+
+executable = 0_run-processradtags
+
+output = logfiles_0_processradtags/$(job)_$(Cluster)_$(Process).out
+error = logfiles_0_processradtags/$(job)_$(Cluster)_$(Process).err
+log = logfiles_0_processradtags/$(job)_$(Cluster).log
+
+request_cpus = $(cpus)
+request_memory = 24GB
+request_disk = 30
+
+queue

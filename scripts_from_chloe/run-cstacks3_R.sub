@@ -1,0 +1,33 @@
+# run-cstacks.sub
+universe = vanilla
+
+job = run-cstacks3_R
+
+#send email notification of job status
+notify_user = cdrummond@wisc.edu
+notification = Always
+
+requirements = (Target.HasGluster == true)
+
+#define variables
+run_name = testing_Mn_Rubus
+cpus = 8
+
+arguments = $(Process) $(run_name) $(cpus) $(n)
+
+should_transfer_files = YES
+transfer_input_files = ../../stacks_install/stacks-2.0-build.tar.gz
+when_to_transfer_output = ON_EXIT
+
+executable = run-cstacks3_R
+
+output = logfiles_cstacks/$(job)_$(Cluster)_$(Process).out
+error = logfiles_cstacks/$(job)_$(Cluster)_$(Process).err
+log = $(job)_$(Cluster).log
+
+request_cpus = $(cpus)
+request_memory = 32GB
+request_disk = 30
+
+###############
+queue 1 n in 1 2 3 4 5 6 7 8 9

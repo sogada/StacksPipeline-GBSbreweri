@@ -1,0 +1,140 @@
+000 (56043687.000.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.001.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.002.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.003.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.004.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.005.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.006.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.007.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.008.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+000 (56043687.009.000) 05/02 19:49:49 Job submitted from host: <128.104.101.92:9618?addrs=128.104.101.92-9618+[2607-f388-107c-501-a036-9fff-fe3c-caa8]-9618&noUDP&sock=6492_4ff9_3>
+...
+007 (56043687.000.000) 05/02 23:43:18 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:39715>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.000.000) 05/02 23:43:18 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:39715>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.001.000) 05/02 23:43:18 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46269>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.001.000) 05/02 23:43:18 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46269>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.002.000) 05/02 23:43:18 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46747>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.002.000) 05/02 23:43:18 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46747>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.003.000) 05/02 23:43:19 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:42498>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.003.000) 05/02 23:43:19 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:42498>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.004.000) 05/02 23:43:19 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:35605>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.004.000) 05/02 23:43:19 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:35605>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.005.000) 05/02 23:43:19 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46446>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.005.000) 05/02 23:43:19 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:46446>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.006.000) 05/02 23:43:20 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:44981>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.006.000) 05/02 23:43:20 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:44981>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.007.000) 05/02 23:43:21 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:40169>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.007.000) 05/02 23:43:21 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:40169>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.008.000) 05/02 23:43:22 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:41600>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.008.000) 05/02 23:43:22 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:41600>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+007 (56043687.009.000) 05/02 23:43:22 Shadow exception!
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:32839>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	0  -  Run Bytes Sent By Job
+	17571  -  Run Bytes Received By Job
+...
+012 (56043687.009.000) 05/02 23:43:22 Job was held.
+	Error from slot1_2@e447.chtc.wisc.edu: SHADOW at 128.104.101.92 failed to send file(s) to <128.105.245.247:32839>: error reading from /home/cdrummond/2018_stacks/Rubus/../stacks_install/stacks-2.0-build.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.101.92:9618>
+	Code 13 Subcode 2
+...
+009 (56043687.000.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.001.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.002.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.003.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.004.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.005.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.006.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.007.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.008.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...
+009 (56043687.009.000) 05/02 23:48:51 Job was aborted by the user.
+	via condor_rm (by user cdrummond)
+...

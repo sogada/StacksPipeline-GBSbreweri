@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#run-processradtags
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+INPUT_DATA=$4
+BARCODES=$5
+
+#make working dirs
+mkdir ./tmp/raw
+mkdir ./tmp/samples
+
+#get input samples tarball from Gluster and stage for ustacks
+cp /mnt/gluster/adinicola/$INPUT_DATA ./tmp/raw
+cp /mnt/gluster/adinicola/$BARCODES .
+
+#move into stacks directory to run it
+cd stacks-2.0
+
+#run-processradtags
+./process_radtags -f ../tmp/raw/$INPUT_DATA -o ../tmp/samples/ -b ../$BARCODES -c -q -e apeKI -D -t 93
+
+#output should all be inside ./tmp/samples now
+
+#tar up job output
+cd ../tmp
+tar -czvf cleansamples.tar.gz samples/
+
+#make directory on Gluster to store job outputs
+mkdir /mnt/gluster/adinicola/${RUN_NAME}
+cp cleansamples.tar.gz /mnt/gluster/adinicola/${RUN_NAME}

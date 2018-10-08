@@ -1,0 +1,36 @@
+# run-ustacks.sub
+universe = vanilla
+
+job = run-ustacks1job_R
+
+#send email notification of job status
+notify_user = cdrummond@wisc.edu
+notification = Always
+
+requirements = (Target.HasGluster == true)
+
+#define variables
+run_name = testing_Mn_Rubus
+cpus = 16
+input_data = Rubus_all.tar.gz
+
+arguments = $(Process) $(run_name) $(cpus) $(input_data) $(little_m) $(big_m) $(max_loc)
+
+should_transfer_files = YES
+transfer_input_files = ../../stacks_install/stacks-2.0-build.tar.gz
+when_to_transfer_output = ON_EXIT
+
+executable = run-ustacks1job_R
+
+output = logfiles_ustacks/$(job)_$(Cluster)_$(Process).out
+error = logfiles_ustacks/$(job)_$(Cluster)_$(Process).err
+log = $(job)_$(Cluster).log
+
+request_cpus = $(cpus)
+request_memory = 48GB
+request_disk = 30
+
+###############
+little_m = 6
+max_loc = 3
+queue 1 big_m in 1 2 3 4 5 6 7 8 9 10

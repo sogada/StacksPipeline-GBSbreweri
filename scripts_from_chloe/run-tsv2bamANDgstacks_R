@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#run tsv2bam and gstacks
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+
+#move files to correct locations
+mv popmap ./tmp/
+
+#get job output from previous step
+cp /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/stacks.tar.gz ./tmp
+cd ./tmp
+tar -xzvf stacks.tar.gz
+rm stacks.tar.gz
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run tsv2bam
+./tsv2bam -P ../tmp/stacks -M ../tmp/popmap -t $CPUS
+
+#run gstacks
+./gstacks -P ../tmp/stacks -M ../tmp/popmap -t $CPUS
+
+#tar up job output
+cd ../tmp
+tar -czvf stacks.tar.gz stacks/
+
+cp stacks.tar.gz /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#run cstacks1_R
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+N=$4
+
+#get tar file from previous catalog build step
+cp /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/stacks.tar.gz ./tmp
+cd ./tmp
+tar -xzvf stacks.tar.gz
+rm stacks.tar.gz
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run cstacks
+./cstacks  -o ../tmp/stacks -n $N -p $CPUS --catalog ../tmp/stacks/catalog -s ../tmp/stacks/sample49 -s ../tmp/stacks/sample50 -s ../tmp/stacks/sample51 -s ../tmp/stacks/sample52 -s ../tmp/stacks/sample53 -s ../tmp/stacks/sample54 -s ../tmp/stacks/sample55 -s ../tmp/stacks/sample56 -s ../tmp/stacks/sample57 -s ../tmp/stacks/sample58 -s ../tmp/stacks/sample59 -s ../tmp/stacks/sample60 -s ../tmp/stacks/sample61 -s ../tmp/stacks/sample62 -s ../tmp/stacks/sample63 -s ../tmp/stacks/sample64 -s ../tmp/stacks/sample65 -s ../tmp/stacks/sample66 -s ../tmp/stacks/sample67 -s ../tmp/stacks/sample68 -s ../tmp/stacks/sample69 -s ../tmp/stacks/sample70 -s ../tmp/stacks/sample71 -s ../tmp/stacks/sample72 -s ../tmp/stacks/sample73 -s ../tmp/stacks/sample74 -s ../tmp/stacks/sample75 -s ../tmp/stacks/sample76 -s ../tmp/stacks/sample77 -s ../tmp/stacks/sample78 -s ../tmp/stacks/sample79 -s ../tmp/stacks/sample80 -s ../tmp/stacks/sample81
+
+#note: include a -s flag for every sample that you want to add to the catalog
+#note: for the second cstacks job and all successive jobs, must include --catalog to add samples to the catalog, otherwise cstacks will build a new independent catalog with each job
+
+#tar up job output
+cd ../tmp/
+tar -czvf stacks.tar.gz stacks/
+
+cp stacks.tar.gz /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/

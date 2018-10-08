@@ -1,0 +1,91 @@
+#!/bin/bash
+
+#run ustacks1job
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+INPUT_DATA=$4
+
+LITTLE_M=$5
+BIG_M=$6
+MAX_LOC=$7
+
+#make working dirs
+mkdir ./tmp/stacks
+
+#get input samples tarball from Gluster and stage for ustacks
+cp /mnt/gluster/adinicola/$RUN_NAME/$INPUT_DATA ./tmp
+cd ./tmp
+tar -xzvf $INPUT_DATA
+rm $INPUT_DATA
+
+#all individual sampleX.fq.gz files should live inside /tmp/samples now
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run ustacks
+./ustacks -t gzfastq -o ../tmp/stacks -i 1 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0001.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 2 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0002.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 3 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0003.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 4 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0004.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 5 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0005.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 6 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0006.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 7 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0007.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 8 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0008.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 9 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0009.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 10 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0010.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 11 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0011.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 12 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0012.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 13 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0013.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 14 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0014.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 15 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0015.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 16 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0016.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 17 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0017.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 18 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0018.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 19 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0019.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 20 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0020.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 21 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0021.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 22 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0022.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 23 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0023.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 24 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0024.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 25 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0025.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 26 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0026.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 27 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0027.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 28 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0028.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 29 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0029.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 30 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0030.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 31 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0031.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 32 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0032.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 33 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0033.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 34 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0034.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 35 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0035.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 36 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0036.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 37 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0037.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 38 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0038.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 39 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0039.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 40 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0040.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 41 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0041.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 42 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0042.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 43 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0043.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 44 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0044.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 45 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0045.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 46 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0046.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 47 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0047.fq.gz
+./ustacks -t gzfastq -o ../tmp/stacks -i 48 -m $LITTLE_M -M $BIG_M --max_locus_stacks $MAX_LOC -p $CPUS -d -f ../tmp/samples/Sample0048.fq.gz
+
+#output should all be inside ./tmp/stacks now
+
+#tar up job output
+cd ../tmp
+tar -czvf stacks.tar.gz stacks/
+
+#make directory on Gluster to store job outputs
+mkdir /mnt/gluster/adinicola/${RUN_NAME}_${PROCESS}
+cp stacks.tar.gz /mnt/gluster/adinicola/${RUN_NAME}_${PROCESS}

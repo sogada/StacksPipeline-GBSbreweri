@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#run sstacks_R
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+
+#get output from building catalog
+cp /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/stacks.tar.gz ./tmp
+cd ./tmp
+tar -xzvf stacks.tar.gz
+rm stacks.tar.gz
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run sstacks
+./sstacks -o ../tmp/stacks -p $CPUS -c ../tmp/stacks/ -s ../tmp/stacks/sample3 -s ../tmp/stacks/sample5 -s ../tmp/stacks/sample9 -s ../tmp/stacks/sample11 -s ../tmp/stacks/sample15 -s ../tmp/stacks/sample17 -s ../tmp/stacks/sample21 -s ../tmp/stacks/sample22 -s ../tmp/stacks/sample23 -s ../tmp/stacks/sample24 -s ../tmp/stacks/sample25 -s ../tmp/stacks/sample26 -s ../tmp/stacks/sample27 -s ../tmp/stacks/sample28 -s ../tmp/stacks/sample29 -s ../tmp/stacks/sample30 -s ../tmp/stacks/sample31 -s ../tmp/stacks/sample32 -s ../tmp/stacks/sample33 -s ../tmp/stacks/sample34 -s ../tmp/stacks/sample35 -s ../tmp/stacks/sample36 -s ../tmp/stacks/sample37 -s ../tmp/stacks/sample38 -s ../tmp/stacks/sample39 -s ../tmp/stacks/sample40 -s ../tmp/stacks/sample41 -s ../tmp/stacks/sample42 -s ../tmp/stacks/sample43 -s ../tmp/stacks/sample44 -s ../tmp/stacks/sample45 -s ../tmp/stacks/sample46 -s ../tmp/stacks/sample48 -s ../tmp/stacks/sample49 -s ../tmp/stacks/sample50 -s ../tmp/stacks/sample51 -s ../tmp/stacks/sample52 -s ../tmp/stacks/sample53 -s ../tmp/stacks/sample54 -s ../tmp/stacks/sample55 -s ../tmp/stacks/sample56 -s ../tmp/stacks/sample57 -s ../tmp/stacks/sample58 -s ../tmp/stacks/sample59 -s ../tmp/stacks/sample60 -s ../tmp/stacks/sample61 -s ../tmp/stacks/sample62 -s ../tmp/stacks/sample63 -s ../tmp/stacks/sample64 -s ../tmp/stacks/sample65 -s ../tmp/stacks/sample66 -s ../tmp/stacks/sample67 -s ../tmp/stacks/sample68 -s ../tmp/stacks/sample69 -s ../tmp/stacks/sample70 -s ../tmp/stacks/sample71 -s ../tmp/stacks/sample72 -s ../tmp/stacks/sample73 -s ../tmp/stacks/sample74 -s ../tmp/stacks/sample75 -s ../tmp/stacks/sample76 -s ../tmp/stacks/sample77 -s ../tmp/stacks/sample78 -s ../tmp/stacks/sample79 -s ../tmp/stacks/sample80 -s ../tmp/stacks/sample81 -s ../tmp/stacks/sample82 -s ../tmp/stacks/sample83 -s ../tmp/stacks/sample84 -s ../tmp/stacks/sample85 -s ../tmp/stacks/sample86 -s ../tmp/stacks/sample87 -s ../tmp/stacks/sample88 -s ../tmp/stacks/sample89 -s ../tmp/stacks/sample90 -s ../tmp/stacks/sample91 -s ../tmp/stacks/sample92 -s ../tmp/stacks/sample93 -s ../tmp/stacks/sample94 -s ../tmp/stacks/sample95 -s ../tmp/stacks/sample96 -s ../tmp/stacks/sample97 -s ../tmp/stacks/sample98 -s ../tmp/stacks/sample99 -s ../tmp/stacks/sample100 -s ../tmp/stacks/sample101 -s ../tmp/stacks/sample102 -s ../tmp/stacks/sample103 -s ../tmp/stacks/sample104 -s ../tmp/stacks/sample105 -s ../tmp/stacks/sample106 -s ../tmp/stacks/sample107 -s ../tmp/stacks/sample108 -s ../tmp/stacks/sample109 -s ../tmp/stacks/sample110 -s ../tmp/stacks/sample111 -s ../tmp/stacks/sample112 -s ../tmp/stacks/sample113 -s ../tmp/stacks/sample114 -s ../tmp/stacks/sample115 -s ../tmp/stacks/sample116 -s ../tmp/stacks/sample117 -s ../tmp/stacks/sample118 -s ../tmp/stacks/sample119 -s ../tmp/stacks/sample124 -s ../tmp/stacks/sample125 -s ../tmp/stacks/sample126 -s ../tmp/stacks/sample127 -s ../tmp/stacks/sample128 -s ../tmp/stacks/sample129 -s ../tmp/stacks/sample130 -s ../tmp/stacks/sample131 -s ../tmp/stacks/sample132 -s ../tmp/stacks/sample133 -s ../tmp/stacks/sample134 -s ../tmp/stacks/sample135 -s ../tmp/stacks/sample136 -s ../tmp/stacks/sample145
+
+#note: must include a -s for each sample that you want to process aka match to the cstacks catalog
+
+#tar up job output
+cd ../tmp
+tar -czvf stacks.tar.gz stacks/
+
+cp stacks.tar.gz /mnt/gluster/cdrummond/${RUN_NAME}_${PROCESS}/
+

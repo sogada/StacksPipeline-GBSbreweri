@@ -1,0 +1,40 @@
+# run-ustacks.sub
+universe = vanilla
+
+job = 1_run-ustacks1job
+
+#send email notification of job status
+notify_user = adinicola@wisc.edu
+notification = Always
+
+requirements = (Target.HasGluster == true)
+
+#define variables
+run_name = P-breweri_2018-05-24
+cpus = 16
+input_data = cleansamples.tar.gz
+
+arguments = $(Process) $(run_name) $(cpus) $(input_data) $(little_m) $(big_m) $(max_loc)
+
+should_transfer_files = YES
+transfer_input_files = ../stacks_install/stacks-2.0-build.tar.gz
+when_to_transfer_output = ON_EXIT
+
+executable = 1_run-ustacks1job
+
+output = logfiles_1_ustacks/$(job)_$(Cluster)_$(Process).out
+error = logfiles_1_ustacks/$(job)_$(Cluster)_$(Process).err
+log = $(job)_$(Cluster).log
+
+request_cpus = $(cpus)
+request_memory = 48GB
+request_disk = 30
+
+###############
+little_m = 3
+big_m = 2
+max_loc = 3
+###############
+
+
+queue 1

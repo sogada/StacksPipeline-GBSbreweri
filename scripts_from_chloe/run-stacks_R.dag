@@ -1,0 +1,16 @@
+#File name: run_full_stacks_pipeline.dag
+#
+JOB A run-cstacks0_R.sub
+JOB B run-cstacks1_R.sub
+JOB C run-cstacks2_R.sub
+JOB D run-cstacks3_R.sub
+JOB E run-sstacks_R.sub
+JOB F run-tsv2bamANDgstacks_R.sub
+JOB G run-populations-singleSNP_R.sub
+
+PARENT A CHILD B
+PARENT B CHILD C
+PARENT C CHILD D
+PARENT D CHILD E
+PARENT E CHILD F
+PARENT F CHILD G

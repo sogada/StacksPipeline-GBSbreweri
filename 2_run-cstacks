@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#run cstacks
+
+#get stacks build
+tar -xzvf stacks-2.0-build.tar.gz
+rm stacks-2.0-build.tar.gz
+
+#define variables
+PROCESS=$1
+RUN_NAME=$2
+CPUS=$3
+N=$4
+
+#get files from previous step
+cp /mnt/gluster/adinicola/${RUN_NAME}/stacks.tar.gz ./tmp/
+cd ./tmp
+tar -xzvf stacks.tar.gz
+rm stacks.tar.gz
+
+#move into stacks directory to run it
+cd ../stacks-2.0
+
+#run cstacks
+#note: include a -s flag for every sample that you want to add to the catalog
+./cstacks -o ../tmp/stacks -n $N -p $CPUS  -s ../tmp/stacks/Sample0001 -s ../tmp/stacks/Sample0002 -s ../tmp/stacks/Sample0003 -s ../tmp/stacks/Sample0004 -s ../tmp/stacks/Sample0005 -s ../tmp/stacks/Sample0006 -s ../tmp/stacks/Sample0007 -s ../tmp/stacks/Sample0008 -s ../tmp/stacks/Sample0009 -s ../tmp/stacks/Sample0010 -s ../tmp/stacks/Sample0011 -s ../tmp/stacks/Sample0012 -s ../tmp/stacks/Sample0013 -s ../tmp/stacks/Sample0014 -s ../tmp/stacks/Sample0015 -s ../tmp/stacks/Sample0016 -s ../tmp/stacks/Sample0017 -s ../tmp/stacks/Sample0018 -s ../tmp/stacks/Sample0019 -s ../tmp/stacks/Sample0020 -s ../tmp/stacks/Sample0021 -s ../tmp/stacks/Sample0022 -s ../tmp/stacks/Sample0023 -s ../tmp/stacks/Sample0024 -s ../tmp/stacks/Sample0025 -s ../tmp/stacks/Sample0026 -s ../tmp/stacks/Sample0027 -s ../tmp/stacks/Sample0028 -s ../tmp/stacks/Sample0029 -s ../tmp/stacks/Sample0030 -s ../tmp/stacks/Sample0031 -s ../tmp/stacks/Sample0032 -s ../tmp/stacks/Sample0033
+
+#tar up job output
+cd ../tmp/
+tar -czvf stacks_${PROCESS}.tar.gz stacks/
+
+cp stacks_${PROCESS}.tar.gz /mnt/gluster/adinicola/${RUN_NAME}/
