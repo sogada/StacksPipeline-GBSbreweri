@@ -1,0 +1,6 @@
+logfiles_*
+*.log
+*.out
+*.err
+
+*dryrun*.txt
